@@ -1,0 +1,54 @@
+form{
+    display: flex;
+    flex-direction: row;
+}
+
+.col{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.invisible{
+    display: none;
+}
+
+.options{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.dropdown{
+    border: 1px solid black;
+
+}
+
+.dropdown span{
+    margin: 0;
+   /* margin-left: 60%; */
+}
+
+.selected-item{
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+    justify-content: space-between;
+    border: 1px solid blue;
+    margin-right: 15px;
+}
+
+.visible{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.all-selected{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+}

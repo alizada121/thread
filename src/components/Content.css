@@ -1,0 +1,16 @@
+.editor {
+    background-color: rgb(230, 236, 250);
+}
+
+.wrapper {
+    border: 1px solid grey;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+form button{
+    width: 30%;
+}
