@@ -1,7 +1,12 @@
+body{
+    overflow-x: hidden;
+}
+
 form{
     display: flex;
     flex-direction: row;
 }
+
 
 .col{
     display: flex;
@@ -51,4 +56,104 @@ form{
     justify-content: flex-start;
     align-items: flex-start;
     width: 100%;
+}
+
+.block{
+    display: block;
+}
+
+.none{
+    display: none;
+}
+
+table{
+    width: 100%;
+}
+th,td{
+    width: 25%;
+}
+table, th, td {
+    border:1px solid black;
+  }
+
+  .nameCol{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-around; */
+  }
+
+  .nameCol span{
+    padding: 0 5px;
+    margin-right: 10px;
+    border: 1px red solid;
+    border-radius:5px ;
+    color:red;
+    background-color: pink;
+  }
+
+  .editBtn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+   a{
+    text-decoration: none;
+
+  }
+
+  .editBtn>div{
+    border: 1px solid orange;
+    border-radius: 5px;
+    width: 25%;
+    color: orange;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+
+  }
+
+  .editBtn>div:hover{
+    background-color: rgba(250, 208, 55, 0.686);
+  }
+  
+.addButton{
+    border: 1px solid green;
+    border-radius: 5px;
+    width: 10%;
+    color: green;
+    display: flex;
+    justify-content: center;
+    margin:20px;
+
+}
+
+.addButton:hover{
+    background-color: rgba(58, 128, 0, 0.659);
+}
+
+.choice{
+    display: flex;
+    flex-direction: row;
+    width: 25%;
+    justify-content: space-between;
+    margin-left: 20px;
+}
+
+.choice h1{
+    width: 45%;
+    border: 1px solid green;
+    color: green;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.choice h1:hover{
+    background-color: rgba(9, 134, 9, 0.481);
+}
+
+.tools{
+    display: flex;
+    flex-direction: column;
 }

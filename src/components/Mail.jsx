@@ -4,7 +4,7 @@ import { AddCustomer } from "../redux/users";
 import { useNavigate } from "react-router-dom";
 import {Link} from "react-router-dom"
 import Content from "./Content";
-import { AddMessage } from "../redux/message";
+import {  AddMessage } from "../redux/message";
 import { useDispatch } from "react-redux";
 import ToComponent from "./ToComponent";
 import ConfirmationModal from "./ConfirmationModal";
@@ -12,20 +12,20 @@ import ConfirmationModal from "./ConfirmationModal";
 function Mail() {
  
 
-  const [opened, setOpened] = useState(false);
+
   const [selected, setSelected] = useState([]);
   const [modal,setModal]=useState(false)
   const dispatch = useDispatch();
   const navigate=useNavigate()
-  const [message,setMessage]=useState({
-    name:"",
-    from:"",
-    customer:"",
-    subject:"",
-    template:"",
-    startDate:""
+const [message,setMessage]=useState({
+  name:"",
+  from:"",
+  customer:"",
+  subject:"",
+  template:"",
+  startDate:""
 
-  })
+})
 
 const handleChange = (e) => {
   const value = e.target.value;
@@ -34,31 +34,55 @@ const handleChange = (e) => {
     [e.target.name]: value,
   });
 
+  // console.log(message.startDate)
+
+
 };
 
 const submitMessage=()=>{
   setModal(true)
- 
+  localStorage.setItem("message1",JSON.stringify(message))
+
 
 }
+
+
+
+
 
 const goToCampaign=()=>{
   dispatch(
     AddMessage({
       name:message.name,
       from:message.from,
-      to:message.to,
+      to:localStorage.getItem('selected'),
       template:message.template,
       subject:message.subject,
-      text:localStorage.getItem('message')
+      text:message.text,
+      draft:false,
+      mail:true
 
   }));
+  navigate('../', { replace: true })
 
-  navigate('../champaign', { replace: true })
+
 }
 
 const switchModal=()=>{
-  setModal(false)
+  dispatch(
+    AddMessage({
+      name:message.name,
+      from:message.from,
+      to:localStorage.getItem('selected'),
+      template:message.template,
+      subject:message.subject,
+      text:localStorage.getItem("message"),
+      draft:true,
+      mail:true
+  }));
+
+  navigate('../', { replace: true })
+  
 
 }
 
@@ -70,7 +94,7 @@ const switchModal=()=>{
       <div className="confirmationModal">
         <h1>Are you sure?</h1>
         <button onClick={goToCampaign} >Yes</button>
-        <button onClick={switchModal}>Go back to form</button>
+        <button onClick={switchModal}>No</button>
     </div>
     :
     <div> <h1>Email Thread</h1>
@@ -88,7 +112,7 @@ const switchModal=()=>{
 
       <div className="col">
         <label>Template</label>
-        <select name="cars" id="cars" onChange={handleChange}>
+        <select name="template" onChange={handleChange}>
           <option value="template1">Template1</option>
           <option value="temaplate2">Temaplate2</option>
         </select>

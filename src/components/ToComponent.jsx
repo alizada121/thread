@@ -10,9 +10,7 @@ function ToComponent() {
   const [newCustomer, setNewCustomer] = useState();
   const [opened, setOpened] = useState(false);
   const [selected, setSelected] = useState([]);
-
   const [data2, setData2] = useState();
-
   const dispatch = useDispatch();
   const { customer } = useSelector((item) => item.users);
   localStorage.setItem("customer", JSON.stringify(customer));
@@ -57,11 +55,13 @@ function ToComponent() {
   useEffect(() => {
     console.log(selected);
     setItem(arr2);
+    localStorage.setItem("selected",item)
   }, [selected]);
 
   useEffect(() => {
     setData2(customer);
   }, [customer]);
+
 
   return (
     <div>
@@ -91,7 +91,7 @@ function ToComponent() {
         <div className={!opened ? "invisible" : "options"}>
           <h4>customer</h4>
           <Link to="/customers">
-            <h3>Add customer</h3>
+            <h3>Add Receiver</h3>
           </Link>
           {data2 &&
             data2.map((item) => (
