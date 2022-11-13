@@ -20,9 +20,9 @@ function ChampMenu() {
 useEffect(()=>{
   if(message.draft==true){
       draftRef.current.style.display="block"
-    editRef.current.style.display="block"
-    viewRef.current.style.display="none"
-    console.log("girdi")
+      editRef.current.style.display="block"
+      viewRef.current.style.display="none"
+      console.log("girdi")
 
 
   }else{
@@ -133,7 +133,7 @@ const search=()=>{
       </Link>
 
       <Link to="/view">
-         <td onClick={()=>{localStorage.setItem("id",item.id)}}><div ref={viewRef}>view</div> </td>
+         <td onClick={()=>{localStorage.setItem("idView",item.id)}}><div ref={viewRef}>view</div> </td>
 
          </Link>
   </tr>

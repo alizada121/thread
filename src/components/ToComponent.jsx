@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { DeleteReceiver } from "../redux/users";
+
 import { AddCustomer } from "../redux/users";
 import { Link } from "react-router-dom";
 
@@ -18,9 +18,7 @@ function ToComponent() {
   const options = ["Mesti", "Qmeter", "unknnown"];
   const [data, setData] = useState(receiver);
 
-  const deleteName = (e) => {
-    dispatch(DeleteReceiver({name:e}));
-  };
+
 
   const nameReceiver = (e) => {
     setNewCustomer(e.target.value);
@@ -50,6 +48,7 @@ function ToComponent() {
   const selectAll2 = () => {
     setItem(receiver);
   };
+
   let arr2 = [];
   arr2 = [...new Set(selected)];
   useEffect(() => {
@@ -63,6 +62,8 @@ function ToComponent() {
   }, [customer]);
 
 
+
+
   return (
     <div>
       <div className="dropdown">
@@ -73,9 +74,11 @@ function ToComponent() {
                 <div className="selected-item">
                   {console.log(item)}
                   {item}
-                  <div onClick={deleteName}>x</div>
+                  
                 </div>
               ))}
+
+
           </div>
           <input
             type="email"
@@ -86,6 +89,7 @@ function ToComponent() {
 
           <div onClick={setTrue}>
             <span>open</span>
+            
           </div>
         </div>
         <div className={!opened ? "invisible" : "options"}>
@@ -101,6 +105,7 @@ function ToComponent() {
                 {item}
               </div>
             ))}
+            
           <h4>receiver</h4>
           {data &&
             data.map((item) => (
@@ -113,6 +118,8 @@ function ToComponent() {
 
           <h6 onClick={selectAll}>select all customers</h6>
           <h6 onClick={selectAll2}>select all receivers</h6>
+
+         
         </div>
       </div>
     </div>

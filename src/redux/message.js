@@ -13,7 +13,7 @@ const messageSlice = createSlice({
        text: (localStorage.getItem('message')) ? (localStorage.getItem('message')):[], draft:false,
        smsText:"",
        template: (JSON.parse((localStorage.getItem("message1"))))?(JSON.parse((localStorage.getItem("message1"))).template):'',
-       draft:false,
+       draft: (JSON.parse((localStorage.getItem("message1"))))?(JSON.parse((localStorage.getItem("message1"))).draft):'',
        mail:false
       }
 

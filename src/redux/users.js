@@ -20,5 +20,5 @@ const users=createSlice({
 
 export const {AddReceiver}=users.actions;
 export const {AddCustomer}=users.actions;
-export const {DeleteReceiver}=users.actions;
+
 export default users.reducer;

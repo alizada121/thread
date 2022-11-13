@@ -23,7 +23,8 @@ const [message,setMessage]=useState({
   customer:"",
   subject:"",
   template:"",
-  startDate:""
+  startDate:"",
+  draft:""
 
 })
 

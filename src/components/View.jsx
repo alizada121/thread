@@ -8,6 +8,7 @@ function View() {
     useEffect(()=>{
         const filterId=localStorage.getItem("idView")
         setData(message.filter((e) => e.id==filterId));
+        // setData()
         console.log(data)
 
     },[])
@@ -21,6 +22,8 @@ function View() {
                      <p> name:{item.name}</p>
                      <p>from:{item.from}</p>
                       <p>to:{item.to}</p>
+                      <p>start date:{item.startDate}</p>
+                      <p>message:{item.text?item.text:item.smsText}</p>
                     </div>
                   ))}
 

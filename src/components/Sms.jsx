@@ -15,7 +15,8 @@ function Sms() {
     subject:"",
     template:"",
     startDate:"",
-    smsText:""
+    smsText:"",
+    draft:""
   
   })
   
