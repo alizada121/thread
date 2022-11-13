@@ -28,8 +28,6 @@ function Content() {
       arr.push(text.slice(0,150))  
       arr.push(text.slice(150,200))  
       setSend(arr)
-      console.log(arr)
-      console.log(send)
       localStorage.setItem("message",arr)
 
 

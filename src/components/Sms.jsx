@@ -28,7 +28,6 @@ function Sms() {
     });
   
     
-    console.log(message);  
   };
 
   const submitMessage=()=>{

@@ -49,7 +49,7 @@ const handleChange = (e) => {
     ...currentData,
     [e.target.name]: value,
   });
-console.log(data)
+
 
 
 };
@@ -57,7 +57,6 @@ console.log(data)
 const submitMessage=()=>{
   setModal(true)
   localStorage.setItem("message1",JSON.stringify(message))
-  console.log(currentData)
 
 
 }

@@ -12,17 +12,12 @@ function ChampMenu() {
     const draftRef=useRef()
     const editRef=useRef()
     const viewRef=useRef()
-    
-// console.log(message.draft)
-// const [messageDetails,setMessageDetails]=useState([])
-
-
 useEffect(()=>{
   if(message.draft==true){
       draftRef.current.style.display="block"
       editRef.current.style.display="block"
       viewRef.current.style.display="none"
-      console.log("girdi")
+
 
 
   }else{
@@ -30,7 +25,7 @@ useEffect(()=>{
     editRef.current.style.display="none"
     viewRef.current.style.display="block"
 
-    console.log("girdi")
+
   }
 
     if(message.mail){
