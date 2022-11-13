@@ -35,7 +35,7 @@ const handleChange = (e) => {
     [e.target.name]: value,
   });
 
-  // console.log(message.startDate)
+  // .log(message.startDate)
 
 
 };

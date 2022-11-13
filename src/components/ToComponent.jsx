@@ -22,14 +22,13 @@ function ToComponent() {
 
   const nameReceiver = (e) => {
     setNewCustomer(e.target.value);
-    console.log(newCustomer);
+
   };
 
   function handleKeyPress(e) {
     if (e.key == "Enter") {
       dispatch(AddCustomer(newCustomer));
-      console.log(customer);
-      console.log("customer");
+    
     }
   }
 
@@ -52,7 +51,7 @@ function ToComponent() {
   let arr2 = [];
   arr2 = [...new Set(selected)];
   useEffect(() => {
-    console.log(selected);
+   
     setItem(arr2);
     localStorage.setItem("selected",item)
   }, [selected]);
@@ -72,7 +71,7 @@ function ToComponent() {
             {item &&
               item.map((item) => (
                 <div className="selected-item">
-                  {console.log(item)}
+                 
                   {item}
                   
                 </div>

@@ -19,7 +19,6 @@ function Customoers() {
   const addCustomer = () => {
     setNames((current) => [...current, receiverName]);
     setNames(receiverName);
-    console.log(names);
     dispatch(AddReceiver(receiverName));
   };
 

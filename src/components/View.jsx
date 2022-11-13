@@ -8,8 +8,7 @@ function View() {
     useEffect(()=>{
         const filterId=localStorage.getItem("idView")
         setData(message.filter((e) => e.id==filterId));
-        // setData()
-        console.log(data)
+
 
     },[])
     
